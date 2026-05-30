@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: podinfo-demo
+  labels:
+    app.kubernetes.io/managed-by: fluxonm
+    app.kubernetes.io/part-of: podinfo-demo
