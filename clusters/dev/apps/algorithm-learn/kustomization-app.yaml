@@ -1,0 +1,18 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: algorithm-learn
+  namespace: flux-system
+  labels:
+    app.kubernetes.io/managed-by: fluxonm
+spec:
+  interval: 1m
+  retryInterval: 30s
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: algorithm-learn-source
+  path: ./infra/k8s
+  prune: true
+  wait: true
+  targetNamespace: algorithm-learn
